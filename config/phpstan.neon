@@ -1,5 +1,3 @@
 services:
-    -
-        class: Contao\Rector\ReturnTypeVisitor
-        tags:
-            - phpstan.parser.richParserNodeVisitor
+    - class: Contao\Rector\ReturnTypeVisitor
+      tags: [phpstan.parser.richParserNodeVisitor]
