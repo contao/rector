@@ -10,7 +10,7 @@ declare(strict_types=1);
  * @license LGPL-3.0-or-later
  */
 
-namespace Contao\Rector;
+namespace Contao\Rector\Node;
 
 use PhpParser\Node;
 use PhpParser\Node\Expr;

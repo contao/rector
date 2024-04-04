@@ -10,10 +10,10 @@ This package includes the [Rector][1] configuration for [Contao][2].
 
 ## Installation
 
-You can install the package with Composer:
+Add the package to your Contao installation via Composer:
 
-```
-composer require contao/rector
+```bash
+composer require contao/rector --dev
 ```
 
 ## Usage
@@ -25,20 +25,28 @@ Create a file named `rector.php` in the root directory of your project.
 
 declare(strict_types=1);
 
+use Contao\Rector\Set\SetList;
 use Rector\Config\RectorConfig;
 
-return static function (RectorConfig $rectorConfig): void {
-    $rectorConfig->sets([__DIR__.'/vendor/contao/rector/config/contao.php']);
-
+return RectorConfig::configure()
+    ->withSets([SetList::CONTAO])
     // Adjust the configuration according to your needs.
-};
+;
 ```
 
 Then run the script like this:
 
-```
+```bash
 vendor/bin/rector
 ```
+
+## What's inside?
+
+The package contains the following custom rectors:
+
+| Class | Description |
+| --- | --- |
+| [`SimplifyObjectOrNullCheckRector`](src/Rector/SimplifyObjectOrNullCheckRector.php) | Replaces null comparisons that check for `object\|null` with boolean comparisons. |
 
 ## License
 
@@ -50,4 +58,4 @@ Visit the [support page][3] to learn about the available support options.
 
 [1]: https://github.com/rectorphp/rector
 [2]: https://contao.org
-[3]: https://contao.org/en/support.html
+[3]: https://to.contao.org/support

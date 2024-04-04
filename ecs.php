@@ -16,6 +16,12 @@ use Symplify\EasyCodingStandard\Config\ECSConfig;
 
 return ECSConfig::configure()
     ->withSets([__DIR__.'/vendor/contao/easy-coding-standard/config/contao.php'])
+    ->withPaths([
+        __DIR__.'/config',
+        __DIR__.'/src',
+        __DIR__.'/ecs.php',
+        __DIR__.'/rector.php',
+    ])
     ->withSkip([
         ReferenceUsedNamesOnlySniff::class => [
             'config/contao.php',

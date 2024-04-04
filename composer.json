@@ -29,9 +29,9 @@
     "scripts": {
         "all": [
             "@rector",
-            "@cs-fixer"
+            "@ecs"
         ],
-        "cs-fixer": "vendor/bin/ecs check config src ecs.php rector.php --fix --ansi",
-        "rector": "@php vendor/bin/rector --ansi"
+        "ecs": "vendor/bin/ecs check --fix",
+        "rector": "@php vendor/bin/rector"
     }
 }

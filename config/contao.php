@@ -15,7 +15,7 @@ use Rector\Config\RectorConfig;
 return RectorConfig::configure()
     ->withPhpSets(php81: true)
     ->withRules([
-        Contao\Rector\SimplifyObjectOrNullCheckRector::class,
+        Contao\Rector\Rector\SimplifyObjectOrNullCheckRector::class,
         Rector\CodingStyle\Rector\FuncCall\ArraySpreadInsteadOfArrayMergeRector::class,
         Rector\CodeQuality\Rector\FuncCall\CompactToVariablesRector::class,
         Rector\CodingStyle\Rector\FuncCall\CountArrayToEmptyArrayComparisonRector::class,
