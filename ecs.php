@@ -32,5 +32,5 @@ return ECSConfig::configure()
         'header' => "This file is part of Contao.\n\n(c) Leo Feyer\n\n@license LGPL-3.0-or-later",
     ])
     ->withParallel()
-    ->withCache(sys_get_temp_dir().'/rector_ecs_cache')
+    ->withCache(sys_get_temp_dir().'/ecs/rector')
 ;
