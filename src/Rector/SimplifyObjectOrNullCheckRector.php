@@ -22,10 +22,11 @@ use Rector\NodeTypeResolver\Node\AttributeKey;
 use Rector\PhpParser\Node\Value\ValueResolver;
 use Rector\Rector\AbstractRector;
 use Rector\TypeDeclaration\TypeAnalyzer\NullableTypeAnalyzer;
+use Symplify\RuleDocGenerator\Contract\DocumentedRuleInterface;
 use Symplify\RuleDocGenerator\ValueObject\CodeSample\CodeSample;
 use Symplify\RuleDocGenerator\ValueObject\RuleDefinition;
 
-final class SimplifyObjectOrNullCheckRector extends AbstractRector
+final class SimplifyObjectOrNullCheckRector extends AbstractRector implements DocumentedRuleInterface
 {
     public function __construct(
         private readonly NullableTypeAnalyzer $nullableTypeAnalyzer,
