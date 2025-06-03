@@ -12,9 +12,7 @@ declare(strict_types=1);
 
 namespace Contao\Rector\Set;
 
-use Rector\Set\Contract\SetListInterface;
-
-final class SetList implements SetListInterface
+final class SetList
 {
     public const CONTAO = __DIR__.'/../../config/contao.php';
 }
