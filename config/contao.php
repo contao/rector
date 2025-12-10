@@ -10,6 +10,7 @@ declare(strict_types=1);
  * @license LGPL-3.0-or-later
  */
 
+use Contao\Rector\Node\ReturnTypeVisitor;
 use Rector\Config\RectorConfig;
 
 return RectorConfig::configure()
@@ -21,7 +22,6 @@ return RectorConfig::configure()
         Rector\CodeQuality\Rector\FunctionLike\SimplifyUselessVariableRector::class,
         Rector\CodeQuality\Rector\Identical\SimplifyBoolIdenticalTrueRector::class,
         Rector\CodeQuality\Rector\If_\SimplifyIfReturnBoolRector::class,
-        Rector\CodingStyle\Rector\String_\SymplifyQuoteEscapeRector::class,
         Rector\CodingStyle\Rector\ClassMethod\NewlineBeforeNewAssignSetRector::class,
         Rector\CodingStyle\Rector\FuncCall\ArraySpreadInsteadOfArrayMergeRector::class,
         Rector\CodeQuality\Rector\FuncCall\CompactToVariablesRector::class,
@@ -33,5 +33,5 @@ return RectorConfig::configure()
         Rector\Php74\Rector\Property\RestoreDefaultNullToNullableTypePropertyRector::class,
         Rector\Strict\Rector\Empty_\DisallowedEmptyRuleFixerRector::class,
     ])
-    ->withPHPStanConfigs([__DIR__.'/phpstan.neon'])
+    ->registerDecoratingNodeVisitor(ReturnTypeVisitor::class)
 ;
